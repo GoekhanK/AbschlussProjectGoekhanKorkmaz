@@ -1,7 +1,13 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import Classes.Krieger
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main() {
+    var krieger1: Krieger = Krieger("Kratos",1000.00)
+    println("${krieger1.name}\nLP:${krieger1.lebensPunkte}")
+    println("${krieger1.attacksOfWarrior.toList()[0]}\n${krieger1.attacksOfWarrior.toList()[1]}")
+    println("${krieger1.inventoryOfAllHeroes.keys}\n${krieger1.inventoryOfAllHeroes.values}")
+
+
+
+
 }
+
