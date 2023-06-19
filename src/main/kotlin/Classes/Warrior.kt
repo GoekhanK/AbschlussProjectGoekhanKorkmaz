@@ -1,7 +1,4 @@
-
-
-import Champions
-import Classes.Boss
+import Classes.Enemy
 
 open class Warrior(name: String, lifePoints: Double) : Champions(name, lifePoints) {
     var listOfWarriorAttacks: MutableMap<String, Int> = mutableMapOf(
@@ -11,7 +8,7 @@ open class Warrior(name: String, lifePoints: Double) : Champions(name, lifePoint
         "Shield Slam" to 100
     )
 
-    override fun attacks(boss: Boss) {
+    override fun attacks(enemy: Enemy) {
         val attack = true
         while (attack) {
             println("Choose an Attack 1-4")
@@ -31,9 +28,9 @@ open class Warrior(name: String, lifePoints: Double) : Champions(name, lifePoint
                 }
             }
             val damage = listOfWarriorAttacks[selectedAttack]
-            println("$name Attacks with $selectedAttack and Deals $damage Dmg to ${boss.name}")
+            println("$name Attacks with $selectedAttack and Deals $damage Dmg to ${enemy.name}")
             if (damage != null) {
-                boss.lifePointsEnemy -= damage
+                enemy.lifePointsEnemy -= damage
             }
             break
         }

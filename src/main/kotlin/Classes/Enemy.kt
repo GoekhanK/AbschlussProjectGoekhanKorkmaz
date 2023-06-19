@@ -1,17 +1,21 @@
+package Classes
 
+import Champions
+import addFromBoss
 
 open class Enemy(var name: String, var lifePointsEnemy: Double) {
     open fun enemyAttacks(championsList: List<Champions>) {
-        var listOfEnemyAttacks: MutableMap<String, Int> = mutableMapOf()
+    }
+
+    open fun spawnAdd(): addFromBoss {
+        return addFromBoss("",0.0)
     }
 
     open fun enemyDebuff() {
-        var debuff: String = ""
     }
 
-    open fun spawnAdd() {
-        var newBoss = addFromBoss("", 0.0)
+    open fun fireAoe() {
+
+
     }
 }
-//  Klasse Enemy erstellt mit eigenschaften name , lp
-
