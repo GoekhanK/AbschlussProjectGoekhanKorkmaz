@@ -1,7 +1,7 @@
 import Classes.Enemy
 
 open class addFromBoss(name: String, lifePointsEnemy: Double) : Enemy(name, lifePointsEnemy) {
-    override fun enemyAttacks(championsList: List<Champions>) {
+    override fun enemyAttacks(championsList: MutableList<Champions>) {
         var listOfaddFromBossAttacks: MutableMap<String, Int> = mutableMapOf(
             "Fire Chain" to 100,
             "Fire Blast" to 100
