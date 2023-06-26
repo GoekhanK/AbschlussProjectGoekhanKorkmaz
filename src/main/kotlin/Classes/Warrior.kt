@@ -74,7 +74,7 @@ open class Warrior(name: String, lifePoints: Double) : Champions(name, lifePoint
                             }
                             return
                         } else {
-                            println("${red}Choice${reset}")
+                            println("${red}Wrong Choice${reset}")
                         }
                     }
 

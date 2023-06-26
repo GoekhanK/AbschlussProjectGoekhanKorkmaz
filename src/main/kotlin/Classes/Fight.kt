@@ -12,6 +12,7 @@ open class Fight(var championsList: MutableList<Champions>, var enemyList: Mutab
                     champion.counter--
                 }
                 println("${italic}${bold}${yellow}${champion.name}${reset}${italic}${bold} is Attacking${reset}")
+                println("${italic}${bold}Please Type 1 or 2${reset}")
                 println("${bold}${italic}1:${reset}${italic}${bold}${yellow} Attack${reset}\n${italic}${bold}2:${reset}${italic}${bold}${yellow} Inventory${reset}")
                 while (true) {
                     var choice = readln()
@@ -45,24 +46,26 @@ open class Fight(var championsList: MutableList<Champions>, var enemyList: Mutab
                             }
                         }
 
-                        else -> println("${red}Wrong Choice, Please Put 1 or 2${reset}")
+                        else -> println("${red}Wrong Choice,Please Type 1 or 2${reset}")
                     }
 
                 }
             }
 
-            for (enemys in enemyList) {
+            for (enemys in enemyList.toList()) {
                 enemys.enemyAttacks(championsList, enemyList)
                 println("${bold}${italic}Name:${reset} ${red}${enemys.name}${reset}${bold}${italic}   LifePoints:${reset}${red} ${enemys.lifePointsEnemy}${reset}")
-                var toDelete = mutableListOf<Champions>()
-                for (champions in championsList) {
+
+                for (champions in championsList.toList()) {
                     if (champions.lifePoints <= 0) {
                         println("${bold}${italic}${yellow}${champions.name}${reset}${bold}${italic} Died${reset}")
-                        toDelete.add(champions)
+                        championsList.remove(champions)
 
                     }
                 }
-                championsList.removeAll(toDelete)
+            }
+            for(champions in championsList.toList()){
+                println("${bold}${italic}Name:${reset} ${yellow}${champions.name}${reset}${bold}${italic}   LifePoints:${reset}${green} ${champions.lifePoints}${reset}")
             }
             round++
         }

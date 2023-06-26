@@ -4,8 +4,8 @@ open class Mage(name: String, lifePoints: Double) : Champions(name, lifePoints) 
     var listOfMageAttacks: MutableMap<String, Int> = mutableMapOf(
         "Arcane Blast" to 25.rangeTo(35).random(),
         "Arcane Salve" to 30.rangeTo(40).random(),
-        "Fire Bolt" to 35.rangeTo(45).random(),
-        "Frost Bolt" to 45.rangeTo(55).random()
+        "Frost Nova" to 35.rangeTo(45).random(),
+        "Frost Bold" to 45.rangeTo(55).random()
     )
 
     override fun attacks(enemy: Enemy) {
@@ -21,8 +21,8 @@ open class Mage(name: String, lifePoints: Double) : Champions(name, lifePoints) 
                 val selectedAttack = when (choice) {
                     "1" -> "Arcane Blast"
                     "2" -> "Arcane Salve"
-                    "3" -> "Fire Bolt"
-                    "4" -> "Frost Bolt"
+                    "3" -> "Frost Nova"
+                    "4" -> "Frost Bold"
                     else -> throw IllegalArgumentException("${red}Wrong Choice${reset}")
                 }
                 val damage = listOfMageAttacks[selectedAttack]
@@ -57,7 +57,7 @@ open class Mage(name: String, lifePoints: Double) : Champions(name, lifePoints) 
                             }
                             break
                         } else {
-                            println("${red}Wrong Choice class mage${reset}")
+                            println("${red}Wrong Choice ${reset}")
                         }
                     }
 
@@ -75,7 +75,7 @@ open class Mage(name: String, lifePoints: Double) : Champions(name, lifePoints) 
                             }
                             break
                         } else {
-                            println("${red}Choice${reset}")
+                            println("${red}Wrong Choice${reset}")
                         }
                     }
 
@@ -84,11 +84,11 @@ open class Mage(name: String, lifePoints: Double) : Champions(name, lifePoints) 
                     }
                 }
             } catch (e: IllegalArgumentException) {
-                println("${red}Wrong Choice class mage 2${reset}")
+                println("${red}Wrong Choice${reset}")
             }
         }
         if(inventoryList.size == 0){
-            println("${red}your Inventory is Empty class mage${reset}")
+            println("${red}your Inventory is Empty${reset}")
         }
     }
 }

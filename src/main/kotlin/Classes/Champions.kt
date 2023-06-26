@@ -3,7 +3,7 @@ import Classes.Enemy
 // Klasse Champions erstellt mit eigenschaften name und lp
 // alle Helden erben von dieser Klasse
 open class Champions(var name: String, var lifePoints: Double) {
-    var counter = 0
+    var counter = 2
     fun debuff() {
         lifePoints *= 0.9
     }
